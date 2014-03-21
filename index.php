@@ -25,7 +25,7 @@
 				$hours += str_replace(',','',$data['hours_forever']);
 			}
 		}
-		//echo $hours;
+		echo $hours . '<br/>';
 		$messages = json_decode(file_get_contents(dirname(__FILE__).'/messages.json'), true);
 		foreach($messages as $time => $message){
 			if($time<=$hours){
