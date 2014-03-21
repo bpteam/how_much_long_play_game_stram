@@ -15,7 +15,7 @@
 	Ex: http://steamcommunity.com/id/xxxKNxxx/games?tab=all<br/>
 	<img src="demo.png">
 </form>
-<?} elseif(preg_match('%^\s*(?<url>(http://)?(?<link>steamcommunity.com/id/(?<nic>[^/]+)/games\?tab=all))\s*$%ims', $_POST['steam_link'], $match)) {
+<?} elseif(preg_match('%^\s*(?<url>(http://)?(?<link>steamcommunity.com/(id|profiles)/(?<nic>[^/]+)/games\?tab=all))\s*$%ims', $_POST['steam_link'], $match)) {
 	$data = file_get_contents('http://'.$match['link']);
 	if(preg_match('%var\s*rgGames\s*=\s*(?<json>\[\{.*\}\]);%ims',$data,$match) && $json = json_decode($match['json'],true)){
 		$hours = 0;
