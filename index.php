@@ -12,7 +12,8 @@
 	<form action="" method="POST">
 	Your steam link: <input type="text" name="steam_link">
 	<input type="submit" value="count"><br/>
-	Ex: http://steamcommunity.com/id/xxxKNxxx/games?tab=all
+	Ex: http://steamcommunity.com/id/xxxKNxxx/games?tab=all<br/>
+	<img src="demo.png">
 </form>
 <?} elseif(preg_match('%^\s*(?<url>(http://)?(?<link>steamcommunity.com/id/(?<nic>[^/]+)/games\?tab=all))\s*$%ims', $_POST['steam_link'], $match)) {
 	$data = file_get_contents('http://'.$match['link']);
